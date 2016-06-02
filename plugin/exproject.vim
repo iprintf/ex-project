@@ -46,6 +46,11 @@ call exproject#register_hotkey( 10 , 1, '<leader>r'       , ":EXProjectRefresh<C
 call exproject#register_hotkey( 11 , 1, 'o'               , ":call exproject#newfile()<CR>"                            , 'Create new file.' )
 call exproject#register_hotkey( 12 , 1, 'O'               , ":call exproject#newfolder()<CR>"                          , 'Create new folder.' )
 
+"kyo Comment Start 2015-10-20 09:07
+
+call exproject#register_hotkey( 13 , 1, 't'               , ":call exproject#tabopen()<CR>"                            , 'Tab Open file.' )
+
+"kyo Comment End   2015-10-20 09:07
 " TODO:
 " nnoremap <silent> <buffer> <leader>e    :call <SID>exPJ_EchoPath()<CR>
 "}}}

@@ -768,6 +768,21 @@ function exproject#set_folder_filter_mode( mode )
     let s:folder_filter_include = (a:mode == 'include')
 endfunction
 
+"kyo Comment Start 2015-10-20 08:37
+function exproject#tabopen()
+     let cur_line = getline(".")
+     let filename = s:getpath(line(".")).strpart(cur_line, stridx(cur_line, "-") + 1)
+
+     if getftype(filename) != "file"
+        let filename = strpart(filename, 0, stridx(filename, " "))
+        if getftype(filename) != "file"
+            return
+        endif
+     endif
+     exec 'tabnew '.filename
+endfunction
+"kyo Comment End   2015-10-20 08:37
+
 " exproject#newfile {{{2
 function exproject#newfile()
     " check if the line is valid file line
